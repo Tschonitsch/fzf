@@ -1,6 +1,6 @@
 # FZF Package & Utility Scripts for Arch Linux
 
-A small collection of `fzf`-powered helper scripts for Arch Linux to
+A collection of `fzf`-powered helper scripts for Arch Linux to
 simplify:
 
 -   Repository package installation
@@ -9,8 +9,6 @@ simplify:
 -   Manpage browsing
 -   Wallpaper switching (via swww)
 -   Central launcher menu
-
-Designed for minimal setups and keyboard-driven workflows.
 
 ------------------------------------------------------------------------
 
