@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Show a fuzzy-finder TUI for picking packages installed on the system to be removed.
+command -v fzf >/dev/null || { echo "fzf not installed"; exit 1; }
 
 fzf_args=(
   --multi
@@ -17,6 +17,5 @@ fzf_args=(
 pkg_names=$(pacman -Qq | fzf "${fzf_args[@]}")
 
 if [[ -n "$pkg_names" ]]; then
-  # Convert newline-separated selections to space-separated for yay
   echo "$pkg_names" | tr '\n' ' ' | xargs sudo pacman -Rns --noconfirm
 fi

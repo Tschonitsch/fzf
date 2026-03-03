@@ -1,5 +1,7 @@
 #!/bin/bash
 
+command -v fzf >/dev/null || { echo "fzf not installed"; exit 1; }
+
 fzf_args=(
   --multi
   --preview 'pacman -Sii {1}'

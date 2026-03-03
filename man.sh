@@ -1,5 +1,7 @@
 #!/bin/bash
 
+command -v fzf >/dev/null || { echo "fzf not installed"; exit 1; }
+
 fzf_args=(
   --preview 'man {1} 2>/dev/null || echo "No Manpage found"'
   --preview-label='alt-p: toggle preview, alt-j/k: scroll'

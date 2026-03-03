@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Show a fuzzy-finder TUI for picking new AUR packages to install.
+command -v fzf >/dev/null || { echo "fzf not installed"; exit 1; }
 
 fzf_args=(
   --multi
@@ -19,7 +19,5 @@ fzf_args=(
 pkg_names=$(yay -Slqa | fzf "${fzf_args[@]}")
 
 if [[ -n "$pkg_names" ]]; then
-  # Convert newline-separated selections to space-separated for yay
   echo "$pkg_names" | tr '\n' ' ' | xargs yay -S --noconfirm
-  sudo updatedb
 fi
