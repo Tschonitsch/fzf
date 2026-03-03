@@ -4,7 +4,7 @@
 
 fzf_args=(
   --multi
-  --preview 'yay -Qi {1}'
+  --preview 'pacman -Qi {1}'
   --preview-label='alt-p: toggle description, alt-j/k: scroll, tab: multi-select'
   --preview-label-pos='bottom'
   --preview-window 'down:65%:wrap'
